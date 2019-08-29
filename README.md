@@ -1,2 +1,40 @@
+# [downloads-rs](https://github.com/zTgx/downloads-rs) [![Build Status](https://travis-ci.org/zTgx/downloads-rs.svg?branch=master)](https://travis-ci.org/zTgx/downloads-rs) [![crate](https://img.shields.io/crates/v/downloads.svg)](https://crates.io/crates/downloads) 
 
-README
+WIP  
+A lib for check [my-crates](https://crates.io/me/crates) all downloads.
+
+# Usage
+Add dependencies
+```rust
+[dependencies]
+downloads = "0.0.1"
+```
+
+Example
+```rust
+extern crate downloads;
+use downloads::*;
+
+fn main() {
+    let user_id = "56717";
+    let v: Result<Value> = fetch(user_id);
+    if let Ok(x) = v {
+        if let Some(arr) = x.as_array() {
+            for i in arr {
+                println!("crate name: {}", i["name"]);
+                println!("all downloads: {}",i["downloads"]);
+            }
+        }
+    }
+}
+```
+
+### About
+I want to check my crates all downloads, but I don't know who to scrapy !  
+However, I found my userid.
+
+__Steps__
+1. Open https://crates.io  
+2. Login  
+3. Open Chrome, More Tools -> Developer Tools, select Network Tab, then refresh  
+4. Finally, find something like `crates?user_id=56717`, double click, will see all your user info.  
