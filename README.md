@@ -1,4 +1,4 @@
-# [downloads-rs](https://github.com/zTgx/downloads-rs) [![Build Status](https://travis-ci.org/zTgx/downloads-rs.svg?branch=master)](https://travis-ci.org/zTgx/downloads-rs) [![crate](https://img.shields.io/crates/v/downloads.svg)](https://crates.io/crates/downloads) 
+# [downloads-rs](https://github.com/zTgx/downloads-rs) [![Build Status](https://travis-ci.org/zTgx/downloads-rs.svg?branch=master)](https://travis-ci.org/zTgx/downloads-rs) [![crate](https://img.shields.io/crates/v/downloads.svg)](https://crates.io/crates/downloads)
 
 WIP  
 A lib for check [my-crates](https://crates.io/me/crates) all downloads.
@@ -7,13 +7,12 @@ A lib for check [my-crates](https://crates.io/me/crates) all downloads.
 Add dependencies
 ```rust
 [dependencies]
-downloads = "0.0.1"
+downloads = "0.0.2"
 ```
 
 Example
 ```rust
 extern crate downloads;
-
 use downloads::*;
 
 fn main() {
@@ -37,10 +36,7 @@ fn main() {
 
 ```
 
-### About
-I want to check my crates all downloads, but I don't know who to scrapy !  
-However, I found my userid.
-
+### Find UserID
 __Steps__
 1. Open https://crates.io  
 2. Login  

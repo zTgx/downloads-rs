@@ -1,7 +1,7 @@
 
 [package]
 name = "downloads"
-version = "0.0.1"
+version = "0.0.2"
 authors = ["zTgx <747674262@qq.com>"]
 edition = "2018"
 repository = "https://github.com/downloads-rs.git"

@@ -33,23 +33,7 @@ pub fn fetch(user_id: &str) -> Result<Value> {
     }
 
     let result: Value = serde_json::from_slice(buf.as_slice()).unwrap();
-    let total = result["meta"]["total"].as_u64().unwrap() as usize;
     let items = result["crates"].clone();
-    let mut json = json!([]);
-    let mut idx = 0usize;
-    while idx < total {
-        let items = items.clone();
-        let item: Value = items.as_array().unwrap()[idx].clone();
-
-        let mut i = json!({});
-
-        i["name"] = item["name"].clone();
-        i["downloads"] = item["downloads"].clone();
-
-        json.as_array_mut().unwrap().push( i );
-
-        idx += 1;
-    }
-
-    Ok( json )
+    
+    Ok( items )
 }
