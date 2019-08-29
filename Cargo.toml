@@ -1,0 +1,15 @@
+
+[package]
+name = "downloads"
+version = "0.1.0"
+authors = ["zTgx <747674262@qq.com>"]
+edition = "2018"
+repository = "https://github.com/downloads-rs.git"
+readme = "README.md"
+keywords = [ "crates", "downloads" ]
+categories = [ "visualization" ]
+license = "MIT/Apache-2.0"
+exclude = [ "/.travis.yml" ]
+description = "All My Crates Downloads"
+
+[dependencies]
