@@ -1,4 +1,4 @@
-static URL: &'static str = "https://crates.io/api/v1/crates?user_id=56717";
+static URL: &'static str = "https://crates.io/api/v1/crates?user_id=";
 
 use curl::easy::{Easy};
 use curl::easy::{List};
@@ -14,12 +14,13 @@ impl Header {
     }
 }
 
-pub fn fetch() -> Result<Value> {
+pub fn fetch(user_id: &str) -> Result<Value> {
     let mut engine = Easy::new();
 
     engine.http_headers(Header::get()).unwrap();
 
-    engine.url(URL).unwrap();
+    let url = URL.to_string() + user_id;
+    engine.url(&url).unwrap();
 
     let mut buf = Vec::new();
     {
